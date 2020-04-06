@@ -74,7 +74,7 @@ stages:
   - cleanup
 
 
-  build_2:
+build_2:
   stage: build
   script:
     - echo "Do something 1…"
