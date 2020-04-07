@@ -74,14 +74,6 @@ stages:
   - cleanup
 
 
-build_2:
-  stage: build
-  script:
-    - echo "Do something 1…"
-    - echo “Do something 2…” 
-    - echo “Do something 3…”
-
-
 workflow:
   rules:
     - if: '$BUILDPACK_URL || $AUTO_DEVOPS_EXPLICITLY_ENABLED == "1"'
