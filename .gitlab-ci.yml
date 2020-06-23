@@ -11,6 +11,7 @@ variables:
 production_manual:
   artifacts:
     paths: [environment_url.txt, tiller.log]
+    when: always
 
 # additional, non-Auto DevOps jobs
 regressions:
