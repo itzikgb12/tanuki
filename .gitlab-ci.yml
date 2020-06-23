@@ -163,7 +163,17 @@ workflow:
     - exists:
         - .static
 
-test:
+regressions:
+  stage: test
+  script:
+    - echo "test..."
+
+functional tests:
+  stage: test
+  script:
+    - echo "test..."
+
+mobile tests:
   stage: test
   script:
     - echo "test..."
