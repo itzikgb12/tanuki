@@ -65,7 +65,7 @@ variables:
   DAST_DISABLED: "true"
   CONTAINER_SCANNING_DISABLED: "true"
   CODE_QUALITY_DISABLED: "true"
-  PERFORMANCE_DISABLED: "true"
+ 
 
 
 
