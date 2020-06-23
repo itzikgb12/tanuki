@@ -163,6 +163,13 @@ workflow:
     - exists:
         - .static
 
+test:
+  stage: test
+  script:
+    - echo "test..."
+
+
+
 include:
   - template: Jobs/Build.gitlab-ci.yml  # https://gitlab.com/gitlab-org/gitlab-foss/blob/master/lib/gitlab/ci/templates/Jobs/Build.gitlab-ci.yml
   - template: Jobs/Test.gitlab-ci.yml  # https://gitlab.com/gitlab-org/gitlab-foss/blob/master/lib/gitlab/ci/templates/Jobs/Test.gitlab-ci.yml
@@ -178,12 +185,6 @@ include:
 
 
 
-
-
-test:
-  stage: test
-  script:
-    - echo "test..."
 
 
 
