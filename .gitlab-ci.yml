@@ -36,7 +36,7 @@ production_manual:
 # additional, non-Auto DevOps jobs
 
 test_environment:
-  stage: deploy_test
+  stage: deploy-testing
   script:
     - echo "deply..."
 
