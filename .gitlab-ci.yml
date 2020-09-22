@@ -4,7 +4,8 @@ include:
 
 stages:
   - build
-  - deploy_test
+  - deploy-testing
+  - validate-environment
   - test
   - deploy  # dummy stage to follow the template guidelines
   - review
@@ -39,6 +40,12 @@ test_environment:
   stage: deploy-testing
   script:
     - echo "deply..."
+
+ping_environment:
+  stage: validate-environment
+  script:
+    - echo "deply..."
+
 
 regressions:
   stage: test
