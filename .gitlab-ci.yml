@@ -13,7 +13,15 @@ production_manual:
     paths: [environment_url.txt, tiller.log]
     when: always
 
+
+
 # additional, non-Auto DevOps jobs
+
+test_environment:
+  stage: deploy
+  script:
+    - echo "deply..."
+
 regressions:
   stage: test
   script:
