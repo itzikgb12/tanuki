@@ -1,6 +1,24 @@
 include:
   - template: Auto-DevOps.gitlab-ci.yml
 
+
+stages:
+  - build
+  - deploy_test
+  - test
+  - deploy  # dummy stage to follow the template guidelines
+  - review
+  - dast
+  - staging
+  - canary
+  - production
+  - incremental rollout 10%
+  - incremental rollout 25%
+  - incremental rollout 50%
+  - incremental rollout 100%
+  - performance
+  - cleanup
+
 # pipeline configuration variables (i.e. not secrets) are better kept in git for transparency
 variables:
   AUTO_DEVOPS_DEPLOY_DEBUG: 1
@@ -18,7 +36,7 @@ production_manual:
 # additional, non-Auto DevOps jobs
 
 test_environment:
-  stage: deploy
+  stage: deploy_test
   script:
     - echo "deply..."
 
