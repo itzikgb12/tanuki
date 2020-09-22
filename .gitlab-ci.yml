@@ -22,9 +22,8 @@ stages:
 
 # pipeline configuration variables (i.e. not secrets) are better kept in git for transparency
 variables:
-  AUTO_DEVOPS_DEPLOY_DEBUG: 1
   TEST_DISABLED: 1
-  SECRET_DETECTION_DISABLED: 1
+  SECRET_DETECTION_DISABLED: 0
 
 # override production_manual from Auto DevOps to include the tiller.log artifact
 production_manual:
