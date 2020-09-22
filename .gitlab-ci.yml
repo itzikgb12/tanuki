@@ -36,12 +36,12 @@ production_manual:
 
 # additional, non-Auto DevOps jobs
 
-test_environment:
+test-environment:
   stage: deploy-testing
   script:
     - echo "deply..."
 
-ping_environment:
+ping-environment:
   stage: validate-environment
   script:
     - echo "deply..."
