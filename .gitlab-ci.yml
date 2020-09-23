@@ -20,20 +20,6 @@ stages:
   - performance
   - cleanup
 
-# pipeline configuration variables (i.e. not secrets) are better kept in git for transparency
-variables:
-  TEST_DISABLED: 1
-  SECRET_DETECTION_DISABLED: 0
-
-# override production_manual from Auto DevOps to include the tiller.log artifact
-production_manual:
-  artifacts:
-    paths: [environment_url.txt, tiller.log]
-    when: always
-
-
-
-# additional, non-Auto DevOps jobs
 
 test-environment:
   stage: deploy-testing
