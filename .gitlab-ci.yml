@@ -1,31 +1,14 @@
-include:
-  - template: Auto-DevOps.gitlab-ci.yml
-
-# pipeline configuration variables (i.e. not secrets) are better kept in git for transparency
-variables:
-  AUTO_DEVOPS_DEPLOY_DEBUG: 1
-  TEST_DISABLED: 1
-  SECRET_DETECTION_DISABLED: 1
-
-# override production_manual from Auto DevOps to include the tiller.log artifact
-production_manual:
-  artifacts:
-    paths: [environment_url.txt, tiller.log]
-    when: always
-
-# additional, non-Auto DevOps jobs
-regressions:
-  stage: test
+.setup:
   script:
-    - echo "test..."
+    - echo creating environment
 
-functional tests:
-  stage: test
+.teardown:
+  after_script:
+    - echo deleting environment
+
+test:
   script:
-    - echo "test..."
-
-mobile tests:
-  stage: test
-  script:
-    - echo "test..."
-
+    - !reference [.setup, script]
+    - echo running my own command
+  after_script:
+    - !reference [.teardown, after_script]
